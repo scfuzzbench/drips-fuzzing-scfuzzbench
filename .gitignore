@@ -18,3 +18,4 @@ docs/
 .env
 corpus/
 crytic-export/
+slither_results.json
