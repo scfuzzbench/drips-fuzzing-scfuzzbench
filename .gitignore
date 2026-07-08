@@ -16,3 +16,6 @@ docs/
 
 # Dotenv file
 .env
+corpus/
+crytic-export/
+slither_results.json

@@ -4,5 +4,18 @@ solc_version = '0.8.20'
 # optimizer_runs = 7_700
 src = 'src'
 out = 'out'
+test = 'test'
 libs = ['lib']
+assertions_revert = false
 ignored_error_codes = [3420,3628,2072,2018,6321,5667,3860,5574]
+
+[invariant]
+runs = 500000000
+depth = 100
+include_storage = true
+show_solidity = true
+show_metrics = true
+fail_on_revert = false
+corpus_dir = "corpus/foundry"
+max_time_delay = 100
+max_block_delay = 60480
