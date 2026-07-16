@@ -501,9 +501,9 @@ abstract contract Streams {
                 if (historyEntry.receivers.length != 0) {
                     uint32 squeezeStartCap = nextSqueezed[currCycleConfigs - i];
                     if (squeezeStartCap < _currCycleStart()) squeezeStartCap = _currCycleStart();
-                    if (squeezeStartCap < historyEntry.updateTime) {
-                        squeezeStartCap = historyEntry.updateTime;
-                    }
+                    // Benchmark fixture: intentionally reintroduce the historical
+                    // pre-update-time squeeze bug
+                    // fixed upstream by drips-network/contracts@f3be74c.
                     if (squeezeStartCap < squeezeEndCap) {
                         squeezedRevIdxs[squeezedNum++] = i;
                         // This will not overflow if the requirement of tracking in the contract
